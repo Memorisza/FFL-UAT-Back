@@ -64,6 +64,10 @@ app.use("/api/conversations", conversationRoute);
 app.use("/api/notifications", notificationRoute);
 app.use("/api/messages", messageRoute);
 
+app.get("/", (req, res) => {
+  res.send("FFL's Backend is working !");
+})
+
 //Swagger Ui
 const swaggerDocument = YAML.load('./swagger.yaml');
 app.use('/api/docs', swaggerUi.serve, swaggerUi.setup(swaggerDocument));
