@@ -72,6 +72,6 @@ app.get("/", (req, res) => {
 const swaggerDocument = YAML.load('./swagger.yaml');
 app.use('/api/docs', swaggerUi.serve, swaggerUi.setup(swaggerDocument));
 
-app.listen(8800, () => {
+app.listen(process.env.PORT || 8800, () => {
   console.log("Backend server is running!");
 });
